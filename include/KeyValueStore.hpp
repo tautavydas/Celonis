@@ -6,7 +6,7 @@ template<typename Strategy>
 class KeyValueStore final {
  private:
   Strategy strategy;
-  size_t size_max_cache;
+  size_t const size_max_cache;
 
  public:
   Cache cache;
@@ -22,14 +22,16 @@ class KeyValueStore final {
 
   void record(string const& key, string const& value) {
     size_t const incoming_size = cache.incoming_size_change(key, value);
-    while (cache.size() + incoming_size > size_max_cache) {
-      strategy.onEviction(cache, disk);
-    }
+    if(incoming_size < size_max_cache) {
+      while (cache.size() + incoming_size > size_max_cache) {
+        strategy.onEviction(cache, disk);
+      }
 
-    if (cache.put(key, value)) {
-      strategy.onRecord(key);
-    } else {
-      strategy.onAccess(key);
+      if (cache.put(key, value)) {
+        strategy.onRecord(key);
+      } else {
+        strategy.onAccess(key);
+      }
     }
   }
 
