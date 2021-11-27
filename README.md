@@ -17,3 +17,5 @@ A double-linked list of keys is kept and being front-pushed and back-popped. Dur
 **Least Frequently Used (LFU)**
 
 An ordered-multimap of counters-as-keys and keys-as-values is recorded. The goal is to track a number of accesses of the original  keys, therefore a counter for each key. Since keys of the "queue" are integers, we must allow non-unique entries. And they must be ordered, so that we always evict the element, which has the key-access-count the lowest (the first element). Upon access we find the counter represeting the key, increase the counter by 1 and put the entry back to the "queue". Upon reentry the key climbs the ordered map and avoids eviction. The higher the counter, the less chance for eviction. Deletion always happens upon request, no matter how high the counter.
+
+https://stackoverflow.com/questions/1436020/whats-the-difference-between-deque-and-list-stl-containers
