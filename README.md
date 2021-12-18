@@ -20,3 +20,4 @@ An ordered-multimap of counters-as-keys and keys-as-values is recorded. The goal
 
 https://stackoverflow.com/questions/1436020/whats-the-difference-between-deque-and-list-stl-containers
 https://www.fluentcpp.com/2018/12/11/overview-of-std-map-insertion-emplacement-methods-in-cpp17/
+https://github.com/vpetrigo/caches/blob/master/include/lfu_cache_policy.hpp
