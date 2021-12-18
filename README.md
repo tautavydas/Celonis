@@ -23,3 +23,6 @@ https://www.fluentcpp.com/2018/12/11/overview-of-std-map-insertion-emplacement-m
 https://github.com/vpetrigo/caches/blob/master/include/fifo_cache_policy.hpp
 https://github.com/vpetrigo/caches/blob/master/include/lfu_cache_policy.hpp
 https://github.com/vpetrigo/caches/blob/master/include/lru_cache_policy.hpp
+https://www.godbolt.org/z/6W7zPY99o
+https://www.godbolt.org/z/d47dqq176
+https://godbolt.org/z/c4Tes7Pnb
